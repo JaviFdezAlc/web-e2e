@@ -237,12 +237,14 @@ export const NavbarLogo = () => {
   return (
     <a
       href="#"
-      className="relative z-20 mr-4 flex items-center space-x-2 px-2 py-1 text-sm font-normal text-black"
+      // keep the anchor a fixed height so the header height doesn't change
+      className="relative z-20 mr-4 flex items-center space-x-2 text-sm font-normal text-black w-[100px] h-12"
     >
       <img
         src={logoE2E}
         alt="logo"
-        className="w-[70px] h-[50px] object-contain"
+        // render the image at 100x100 but remove it from document flow so it doesn't affect header height
+        className="w-[100px] h-[100px] object-contain absolute left-0 top-1/2 -translate-y-1/2 pointer-events-none"
       />
     </a>
   );
